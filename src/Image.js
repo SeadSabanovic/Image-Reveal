@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { CSSRulePlugin } from "gsap/all";
 import gsap, { CSSPlugin } from "gsap";
+import asset from "./asset1.jpeg";
 
 export default function Image() {
   gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
@@ -15,6 +16,7 @@ export default function Image() {
 
   const reveal = () => {
     console.log("image loaded");
+    console.log(tl);
     tl.to(container.current, 0, { css: { visibility: "visible" } })
       .to(imageReveal, {
         width: "0%",
@@ -35,7 +37,7 @@ export default function Image() {
         <img
           ref={image}
           className="image__asset"
-          src="https://images.pexels.com/photos/6794581/pexels-photo-6794581.jpeg"
+          src={asset}
           alt=""
           loading="lazy"
           onLoad={reveal}
