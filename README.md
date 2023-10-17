@@ -1,4 +1,4 @@
-![Thumbnail](https://raw.githubusercontent.com/SeadSabanovic/theme-switch/main/src/assets/readme.png)
+![Thumbnail](https://raw.githubusercontent.com/SeadSabanovic/Image-Reveal/main/src/readme.png)
 
 ## React + GSAP Image Reveal
 Animated Image Reveal with GSAP once Image is loaded. 
