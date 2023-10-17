@@ -15,13 +15,13 @@ export default function Image() {
 
   const reveal = () => {
     console.log("image loaded");
-    tl.to(container, 0, { css: { visibility: "visible" } })
+    tl.to(container.current, 0, { css: { visibility: "visible" } })
       .to(imageReveal, {
         width: "0%",
         duration: 1.5,
       })
       .from(
-        image,
+        image.current,
         {
           duration: 1.6,
           scale: 1.4,
@@ -31,9 +31,9 @@ export default function Image() {
   };
   return (
     <div className="image">
-      <div className="image__container" ref={(el) => (container = el)}>
+      <div className="image__container" ref={container}>
         <img
-          ref={(el) => (image = el)}
+          ref={image}
           className="image__asset"
           src="https://images.pexels.com/photos/6794581/pexels-photo-6794581.jpeg"
           alt=""
