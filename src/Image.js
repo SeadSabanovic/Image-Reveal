@@ -5,8 +5,8 @@ import asset from "./asset1.jpeg";
 
 export default function Image() {
   gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
-  let container = useRef(null);
-  let image = useRef(null);
+  const container = useRef(null);
+  const image = useRef(null);
   const imageReveal = CSSRulePlugin.getRule(".image__container:after");
   const tl = gsap.timeline({
     defaults: {
@@ -17,6 +17,10 @@ export default function Image() {
   const reveal = () => {
     console.log("image loaded");
     console.log(tl);
+    console.log(container);
+    console.log(image);
+    console.log(imageReveal);
+
     tl.to(container.current, 0, { css: { visibility: "visible" } })
       .to(imageReveal, {
         width: "0%",
