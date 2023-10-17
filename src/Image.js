@@ -7,7 +7,7 @@ export default function Image() {
   gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
   const container = useRef(null);
   const image = useRef(null);
-  const imageReveal = CSSRulePlugin.getRule(".image__container:after");
+  const imageReveal = CSSRulePlugin.getRule(".image__container::after");
   const tl = gsap.timeline({
     defaults: {
       ease: "power2.inOut",
