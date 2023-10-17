@@ -21,7 +21,7 @@ export default function Image() {
     console.log(image);
     console.log(imageReveal);
 
-    tl.to(container.current, 0, { css: { visibility: "visible" } })
+    tl.to(container.current, { duration: 0, css: { visibility: "visible" } })
       .to(imageReveal, {
         width: "0%",
         duration: 1.5,
