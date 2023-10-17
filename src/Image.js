@@ -1,13 +1,11 @@
 import React, { useRef } from "react";
-import { CSSRulePlugin } from "gsap/all";
-import gsap, { CSSPlugin } from "gsap";
+import gsap from "gsap";
 import asset from "./asset1.jpeg";
 
 export default function Image() {
-  gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
   const container = useRef(null);
+  const containerBg = useRef(null);
   const image = useRef(null);
-  const imageReveal = CSSRulePlugin.getRule(".image__container::after");
   const tl = gsap.timeline({
     defaults: {
       ease: "power2.inOut",
@@ -16,13 +14,9 @@ export default function Image() {
 
   const reveal = () => {
     console.log("image loaded");
-    console.log(tl);
-    console.log(container);
-    console.log(image);
-    console.log(imageReveal);
 
     tl.to(container.current, { duration: 0, css: { visibility: "visible" } })
-      .to(imageReveal, {
+      .to(containerBg.current, {
         width: "0%",
         duration: 1.5,
       })
@@ -38,6 +32,7 @@ export default function Image() {
   return (
     <div className="image">
       <div className="image__container" ref={container}>
+        <div className="image__container__bg" ref={containerBg} />
         <img
           ref={image}
           className="image__asset"
