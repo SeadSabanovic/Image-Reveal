@@ -14,6 +14,7 @@ export default function Image() {
   });
 
   const reveal = () => {
+    console.log("image loaded");
     tl.to(container, 0, { css: { visibility: "visible" } })
       .to(imageReveal, {
         width: "0%",
